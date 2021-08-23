@@ -131,7 +131,7 @@ def funcio_general(fingerprint):
 				
 	maxims = ordenarTanimotos(maxims)
 	
-	df_max = pd.DataFrame(maxims, columns =['Molecule ID','Molecule SMILES','Tanimoto', 'Is Active', 'Closer Active ID', 'Closer Active SMILES'])
+	df_max = pd.DataFrame(maxims, columns =['Molecule ID','Molecule SMILES','Tanimoto', 'Is Active', 'Closest Active ID', 'Closest Active SMILES'])
 		
 	df_max.to_csv('~/FiBeFTa/FPs/'+str(fingerprint)+'.csv', index=False)
 	print(str(fingerprint)+" COMPLETED")
