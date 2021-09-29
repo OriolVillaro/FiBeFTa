@@ -16,7 +16,7 @@ The fingerprints used by FiBeFTa are:
 
 ## PREREQUISITES:
 
-The easiest way to install the libraries needed to run a local copy of FiBeFTa is the use of the environment manager "Conda" (https://docs.conda.io/en/latest/), in order to create the environment with the file "req.txt". This files includes all the packages and the versions used by FiBeFTa, and can be used to replicate it by doing:
+The easiest way to install the libraries needed to run a local copy of FiBeFTa is the use of the environment manager "Conda" (https://docs.conda.io/en/latest/). To create a new environment (<env>) that includes all the packages with their respective versions used by FiBeFTa use:
 
 		conda create --name <env> --file req.txt
 
@@ -29,10 +29,10 @@ If an environment has been created with Conda, remember to activate it before th
 
 		conda activate <env>
 	
-The use of the terminal tool follows the following structure:
+To run the terminal tool use:
    
 		python fibefta.py -f active_file.sdf decoy_file.smi
   
-This is the minimal instruction, with the required argument --files, to specify the two sets of molecules. The format accepted are SDF and SMILES.
+This is the minimal command, with the required argument --files (-f), to specify the two sets of molecules. The formats accepted are SDF and SMILES.
   
 The optional arguments are --help and --destination. --Destination, or -d, is used to specify a path to save the results.
