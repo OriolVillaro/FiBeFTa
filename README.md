@@ -4,7 +4,7 @@ An online tool for virtual screening. Avilable as a web server and as a terminal
 
 ## DESCRIPTION:
 
-FiBeFTa compares the performance of 10 different molecular fingerprints, according to their ability to differentiate between an active set of molecules and a decoy one. This program outputs a metrics.csv, comparing the performance of all fingerprints according to Enrichment Factor 1 and 10, the Area Under the Curve and BEDROC. It also generates one file per fingerprint used, with the list of molecules ordered by Tanimoto score with the active molecule they most resemble.
+FiBeFTa compares the performance of 10 different molecular fingerprints, according to their ability to differentiate between an active set of molecules and a decoy one. This program outputs a metrics.csv, comparing the performance of all fingerprints according to Enrichment Factor 1 and 10, the AUC and BEDROC. It also generates one file per fingerprint used, with the list of molecules ordered by Tanimoto score with the active molecule they most resemble.
 
 
 ## PREREQUISITES:
