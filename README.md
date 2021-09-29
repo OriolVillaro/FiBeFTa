@@ -9,17 +9,27 @@ FiBeFTa compares the performance of 10 different molecular fingerprints, accordi
 The fingerprints used by FiBeFTa are:
 
 -OpenBabel:
-	*
+	-FP2
+	-FP3
+	-ChemFP Substruct
 	
 -RDKit:
-	*
+	-AtomPair
+	-Avalon
+	-Fingerprint
+	-MACCS166
+	-Morgan
+	-Pattern
+	-Torsion
 
 
 ## PREREQUISITES:
 
-The only requisite for the use of this software is the environment manager "Conda", in order to create the environment with the file "req.txt". This files includes all the packages and the versions used by fibefta, and cab be used to replicate it by doing:
+The easiest way to install the libraries needed to run FiBeFTa is the use of the environment manager "Conda" (https://docs.conda.io/en/latest/), in order to create the environment with the file "req.txt". This files includes all the packages and the versions used by fibefta, and cab be used to replicate it by doing:
 
-		conda create --name <env> --file <this file>
+		conda create --name <env> --file req.txt
+
+The recommended Python version for the use of FiBeFTa is 2.7, for the correct calculation of molecular fingerprints. 
 
 
 ## USE:
