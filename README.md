@@ -20,11 +20,15 @@ The easiest way to install the libraries needed to run a local copy of FiBeFTa i
 
 		conda create --name <env> --file req.txt
 
-The recommended Python version for the use of FiBeFTa is 2.7, for the correct calculation of molecular fingerprints. 
+For the correct calculation of molecular fingerprints the recommended Python version is 2.7. 
 
 
 ## USE:
 
+If an environment has been created with Conda, remember to activate it before the execution by doing:
+
+		conda activate <env>
+	
 The use of the terminal tool follows the following structure:
    
 		python fibefta.py -f active_file.sdf decoy_file.smi
