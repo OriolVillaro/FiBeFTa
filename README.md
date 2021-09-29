@@ -8,7 +8,7 @@ FiBeFTa compares the performance of 10 different molecular fingerprints, accordi
 
 The fingerprints used by FiBeFTa are:
 
--OpenBabel: FP2, FP3, ChemFP Substruct
+-OpenBabel: FP2, FP3, ChemFP-Substruct
 
 -RDKit: AtomPair, Avalon, Fingerprint, MACCS166, Morgan, Pattern, Torsion
 
