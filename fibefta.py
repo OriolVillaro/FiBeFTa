@@ -11,6 +11,7 @@ from sklearn import metrics
 from openbabel import pybel
 import pathos.multiprocessing
 from pathos.multiprocessing import ProcessingPool as Pool
+import argparse
 
 pybel.ob.obErrorLog.SetOutputLevel(-1)
 
@@ -79,12 +80,12 @@ def funcio_general(fingerprint):
 	fptype=chemfp.get_fingerprint_type(fingerprint)
 	T=fptype.toolkit
 	
-	mfile=(sys.argv[1][:-4])+"_uniques.sdf"
+	mfile=(args.files[0][:-4])+"_uniques.sdf"
 	
 	with T.read_molecules(mfile) as reader:
 		actives=[T.copy_molecule(mol) for mol in reader]
 
-	mfile=(sys.argv[2][:-4])+"_uniques.sdf"
+	mfile=(args.files[1][:-4])+"_uniques.sdf"
 	
 	with T.read_molecules(mfile) as reader:
 		decoys=[T.copy_molecule(mol) for mol in reader]
@@ -133,7 +134,7 @@ def funcio_general(fingerprint):
 	
 	df_max = pd.DataFrame(maxims, columns =['Molecule ID','Molecule SMILES','Tanimoto', 'Is Active', 'Closest Active ID', 'Closest Active SMILES'])
 		
-	df_max.to_csv('~/FiBeFTa/FPs/'+str(fingerprint)+'.csv', index=False)
+	df_max.to_csv(args.path+'/FPs/'+str(fingerprint)+'.csv', index=False)
 	print(str(fingerprint)+" COMPLETED")
 	
 	metriques[0] = fingerprint
@@ -149,14 +150,34 @@ def funcio_general(fingerprint):
 
 if __name__ == '__main__':
 	
-	path='~/FiBeFTa/FPs'
-	directory=os.path.expanduser(path)
 	
+		
+	parser=argparse.ArgumentParser()
+	requiredArg = parser.add_argument_group('required arguments')
+	requiredArg.add_argument('-f', '--files',
+						required=True,
+						dest='files',
+						help='Files for molecule sets in format SDF or SMILES, first specifiying the active file set and then the decoys',
+						nargs='+',
+						type=str
+						)			
+	
+	parser.add_argument('-d', '--destination',
+						dest='path',
+						help= 'Specifiy path to save results',
+						type=str,
+						default='./FiBeFTa/FPs'
+						)
+											
+	args=parser.parse_args()
+
+	directory=os.path.expanduser(args.path)
 	if not os.path.exists(directory):
 		os.makedirs(directory)
-		
-	eliminar_repetits(sys.argv[1])
-	eliminar_repetits(sys.argv[2])
+	os.makedirs(directory+'/FPs')
+
+	eliminar_repetits(args.files[0])
+	eliminar_repetits(args.files[1])
 	
 	metriques = [0 for x in range(5)]
 	
@@ -171,10 +192,10 @@ if __name__ == '__main__':
 	print(df_met)
 	print("\n")
 
-	df_met.to_csv('~/FiBeFTa/metrics.csv', index=False)
+	df_met.to_csv(args.path+'/metrics.csv', index=False)
 	
-	mfile=sys.argv[1]
+	mfile=args.files[0]
 	os.remove((mfile[:-4])+"_uniques.sdf")
-	mfile=sys.argv[2]
+	mfile=args.files[1]
 	os.remove((mfile[:-4])+"_uniques.sdf")
 
