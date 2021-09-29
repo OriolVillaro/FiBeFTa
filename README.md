@@ -15,7 +15,7 @@ The fingerprints used by FiBeFTa are:
 
 ## PREREQUISITES:
 
-The easiest way to install the libraries needed to run FiBeFTa is the use of the environment manager "Conda" (https://docs.conda.io/en/latest/), in order to create the environment with the file "req.txt". This files includes all the packages and the versions used by fibefta, and cab be used to replicate it by doing:
+The easiest way to install the libraries needed to run a local copy of FiBeFTa is the use of the environment manager "Conda" (https://docs.conda.io/en/latest/), in order to create the environment with the file "req.txt". This files includes all the packages and the versions used by fibefta, and cab be used to replicate it by doing:
 
 		conda create --name <env> --file req.txt
 
