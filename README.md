@@ -32,7 +32,7 @@ If an environment has been created with Conda, remember to activate it before th
 To run the terminal tool use:
    
 		python fibefta.py -f active_file.sdf decoy_file.smi
-  
-This is the minimal command, with the required argument --files (-f), to specify the two sets of molecules. The formats accepted are SDF and SMILES.
+	
+The required argument --files (-f) is used to specify the two sets of molecules (actives and decoys). The formats accepted are SDF and SMILES.
   
 The optional arguments are --help and --destination. --Destination, or -d, is used to specify a path to save the results.
