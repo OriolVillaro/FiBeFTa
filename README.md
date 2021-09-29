@@ -1,5 +1,5 @@
 # FiBeFTa
-An online tool for virtual screening. Available as a web server (http://fibefta.urv.cat) and as a terminal tool.
+An online tool for virtual screening. Available as a terminal tool here and also as a web server at http://fibefta.urv.cat.
 
 
 ## DESCRIPTION:
