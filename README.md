@@ -5,7 +5,7 @@ An online tool for finding the best fingerprint for a specific target and discer
 
 ## DESCRIPTION:
 
-FiBeFTa compares the performance of 10 different molecular fingerprints, according to their ability to differentiate between an active set of molecules and a decoy one. This program outputs a metrics.csv, comparing the performance of all fingerprints according to Enrichment Factor 1 and 10, the AUC and BEDROC. It also generates one file per fingerprint used, with the list of molecules ordered by Tanimoto score with the active molecule they most resemble.
+FiBeFTa compares the performance of 10 different molecular fingerprints, according to their ability to differentiate between an active set of molecules and a decoy one. The main output of the program is the "metrics.csv" file, that compares the performance of all fingerprints according to Enrichment Factor 1 and 10, the AUC and BEDROC. It also generates one file per fingerprint used, with the list of molecules ordered by Tanimoto score with the active molecule they most resemble.
 
 The fingerprints used by FiBeFTa are:
 
@@ -33,6 +33,6 @@ To run the terminal tool use:
    
 		python fibefta.py -f active_file.sdf decoy_file.smi
 	
-The required argument --files (-f) is used to specify the two sets of molecules (actives and decoys). The formats accepted are SDF and SMILES.
+The required argument --files (-f) is used to specify the files with the two sets of molecules (actives and decoys). The formats accepted for these files are SDF and SMILES.
   
-The optional arguments are --help and --destination. --Destination, or -d, is used to specify a path to save the results.
+The optional arguments are --help and --destination. --Destination, or -d, is used to specify a path to save the results. The default option saves the "metrics.csv" in the current location of the terminal, and creates a folder named "FPs", with the list of molecules according to each fingerprint.
