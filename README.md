@@ -1,10 +1,18 @@
 # FiBeFTa
-An online tool for virtual screening. Available as a terminal tool here and also as a web server at http://fibefta.urv.cat.
+An online tool for finding the best fingerprint for a specific target and discern between active and decoy molecules for that target. Available as a terminal tool here and also as a web server at http://fibefta.urv.cat.
 
 
 ## DESCRIPTION:
 
 FiBeFTa compares the performance of 10 different molecular fingerprints, according to their ability to differentiate between an active set of molecules and a decoy one. This program outputs a metrics.csv, comparing the performance of all fingerprints according to Enrichment Factor 1 and 10, the AUC and BEDROC. It also generates one file per fingerprint used, with the list of molecules ordered by Tanimoto score with the active molecule they most resemble.
+
+The fingerprints used by FiBeFTa are:
+
+-OpenBabel:
+	*
+	
+-RDKit:
+	*
 
 
 ## PREREQUISITES:
